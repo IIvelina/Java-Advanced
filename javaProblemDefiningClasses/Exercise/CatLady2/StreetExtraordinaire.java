@@ -1,0 +1,29 @@
+package CatLady2;
+
+public class StreetExtraordinaire extends Cat{
+    //decibels of their meowing during the night
+   // private String name;
+    private double decibels;
+
+    public StreetExtraordinaire(String name, double decibels) {
+        super(name);
+        this.decibels = decibels;
+    }
+
+
+    public double getDecibels() {
+        return decibels;
+    }
+
+    public void setDecibels(double decibels) {
+        this.decibels = decibels;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("StreetExtraordinaire %s %.2f",
+                this.getName(),
+                this.decibels);
+    }
+}
+
