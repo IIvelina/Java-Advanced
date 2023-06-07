@@ -1,6 +1,7 @@
 package DataStructures;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class DatingApp {
     public static void main(String[] args) {
@@ -77,7 +78,7 @@ public class DatingApp {
 
          */
 
-        System.out.println("Matches: " + matchesCount);
+        /*System.out.println("Matches: " + matchesCount);
         if (malesStack.isEmpty()) {
             System.out.println("Males left: none");
         } else {
@@ -91,6 +92,25 @@ public class DatingApp {
             System.out.print("Females left: ");
             System.out.println(femalesQueue.toString().replaceAll("\\[", "").
                     replaceAll("]", ""));
+        }
+
+         */
+        System.out.println("Matches: " + matchesCount);
+        if (malesStack.isEmpty()) {
+            System.out.println("Males left: none");
+        } else {
+            System.out.print("Males left: ");
+
+            System.out.println(malesStack.stream().map(String::valueOf)
+                    .collect(Collectors.joining(", ")));
+        }
+        if (femalesQueue.isEmpty()) {
+            System.out.println("Females left: none");
+        } else {
+            System.out.print("Females left: ");
+
+            System.out.println(femalesQueue.stream().map(String::valueOf)
+                    .collect(Collectors.joining(", ")));
         }
     }
 }
